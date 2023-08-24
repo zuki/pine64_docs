@@ -1,0 +1,14 @@
+[book]
+authors = ["Keiji Suzuki"]
+language = "ja"
+multilingual = false
+src = "src"
+title = "Pine64"
+
+[output.html]
+default-theme = "rust"
+# git-repository-url = "https://github.com/zuki/"
+
+[output.html.fold]
+enable = false
+level = 0
