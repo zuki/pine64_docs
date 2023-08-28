@@ -1,4 +1,4 @@
-# README
+# github.com/AdamRLukaitis/pine64: README
 
 [オリジナル](https://github.com/AdamRLukaitis/pine64/blob/master/README)
 
