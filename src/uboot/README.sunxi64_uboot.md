@@ -1,4 +1,4 @@
-# Allwinner 64-bitボートのREADME
+# U-Boot: Allwinner 64-bitボートのREADME
 
 [オジリナル](https://github.com/u-boot/u-boot/blob/master/board/sunxi/README.sunxi64)
 
@@ -28,7 +28,7 @@ AArch64モードとARMv7互換の32ビットのAArch32モードの両方をサ�
   $ export SCP=/src/crust/build/scp/scp.bin
   $ make pine64_plus_defconfig && make -j5
   ```
-- mivtoSDカードに書き込みます（下の[microSDカード](#microSDカード)を参照） (see "microSD card" below)
+- mivtoSDカードに書き込みます（下の[microSDカード](#microSDカード)を参照）
   ```bash
   $ dd if=u-boot-sunxi-with-spl.bin of=/dev/sdx bs=8k seek=1
   ```
