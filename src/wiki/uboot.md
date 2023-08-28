@@ -81,5 +81,7 @@ $ git clone git://git.denx.de/u-boot.git
 
 [以下、省略]
 
-U-Boootに関しては[board/sunxi/README.sunxi64](../others/README.sunxi64_uboot.md)を
+U-Boootのビルドに関しては[board/sunxi/README.sunxi64](../others/README.sunxi64_uboot.md)を
 参照すること。
+
+## U-Bootの構成
