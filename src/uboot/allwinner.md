@@ -1,4 +1,4 @@
-# Allwinner SoCベースのボード
+# U-Bootドキュメント: Allwinner SoCベースのボード
 
 [オリジナル](https://u-boot.readthedocs.io/en/latest/board/allwinner/sunxi.html)
 
