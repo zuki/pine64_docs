@@ -12,6 +12,7 @@
 
 # U-Boot
 
+- [環境変数](uboot/env.md)
 - [Allwinner SoCベースのボード](uboot/allwinner.md)
 - [U-Boot: README.sunxi64](uboot/README.sunxi64_uboot.md)
 
