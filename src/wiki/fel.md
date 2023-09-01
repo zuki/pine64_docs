@@ -13,7 +13,7 @@ FELはAllwinnerデバイスのBootROMに含まれているる低レベルサブ�
 
 ## FELモードと会話するためのツール
 
-[ツールリポジトリ](https://linux-sunxi.org/Sunxi-tools)にはFELモードを
+[ツールリポジトリ](https://github.com/linux-sunxi/sunxi-tools)にはFELモードを
 扱うためのツールがあります。まだしていないのであれば、
 [リポジトリを取得してビルド](https://linux-sunxi.org/Sunxi-tools#Building_from_Source)
 してください。
