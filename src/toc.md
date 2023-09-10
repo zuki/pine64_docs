@@ -11,6 +11,7 @@
 - [A64](wiki/a64.md)
 - [FEL](wiki/fel.md)
 - [FEL/USBBoot](wiki/usb_boot.md)
+- [Sun8i emac](wiki/sun8i_emac.md)
 
 # U-Boot
 
@@ -25,6 +26,13 @@
 - [README](crust/README.md)
 - [ABI](crust/abi.md)
 
+# Pineを楽しむ: Genodians
+
+- [ウォーミングアップ](genodians/warming_up.md)
+- [ベアメタルシリアル出力](genodians/baremetal.md)
+- [カーネルスケルトン](genodians/kernel.md)
+- [Linuxを散歩に連れ出す](genodians/taking_linux.md)
+
 # その他
 
 - [AdamRLukaitis/pine64: README](others/README_adam.md)
@@ -36,3 +44,7 @@
 
 - [AdamRLukaitis/pine64の追試](memo/adam_test.md)
 - [Pine A64+へのLinuxのインストール](memo/install.md)
+- [Buildrootによるインストール](memo/buildroot.md)
+- [sunxi-felコマンドの実行](memo/fel.md)
+- [tftp経由のプログラムロード](memo/tftp.md)
+- [U-BootからLinuxを実行](memo/uboot_linux.md)
