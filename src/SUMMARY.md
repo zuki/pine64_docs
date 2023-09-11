@@ -50,3 +50,4 @@
 - [sunxi-felコマンドの実行](memo/fel.md)
 - [tftp経由のプログラムロード](memo/tftp.md)
 - [U-BootからLinuxを実行](memo/uboot_linux.md)
+- [MacのSDXCカードスロットをVirtualBoxから使用する](memo/virtualbox.md)
