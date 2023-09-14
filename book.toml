@@ -7,6 +7,7 @@ title = "Pine64"
 
 [output.html]
 default-theme = "rust"
+additional-css = ["theme/variables.css"]
 # git-repository-url = "https://github.com/zuki/"
 
 [output.html.fold]
