@@ -1,0 +1,309 @@
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 6.1.52 (vagrant@ubuntu-bionic) (aarch64-linux-gnu-gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld3
+[    0.000000] Machine model: Pine64+
+[    0.000000] efi: UEFI not found.
+[    0.000000] NUMA: No NUMA configuration found
+[    0.000000] NUMA: Faking a node at [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] NUMA: NODE_DATA [mem 0x7fdc7a00-0x7fdc9fff]
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   empty
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x000000007fffffff]
+[    0.000000] cma: Reserved 32 MiB at 0x000000007cc00000
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.4
+[    0.000000] percpu: Embedded 20 pages/cpu s44840 r8192 d28888 u81920
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 843419
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] alternatives: applying boot alternatives
+[    0.000000] Fallback order for Node 0: 0 
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 258048
+[    0.000000] Policy zone: DMA
+[    0.000000] Kernel command line: rdinit=/sbin/init ip=dhcp
+[    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.000000] mem auto-init: stack:off, heap alloc:off, heap free:off
+[    0.000000] Memory: 956620K/1048576K available (16256K kernel code, 3714K rwdata, 9504K rodata, 7616K init, 609K bss, 59188K )
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] rcu:     RCU event tracing is enabled.
+[    0.000000] rcu:     RCU restricting CPUs from NR_CPUS=256 to nr_cpu_ids=4.
+[    0.000000]  Trampoline variant of Tasks RCU enabled.
+[    0.000000]  Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.000000] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] Root IRQ handler: gic_handle_irq
+[    0.000000] GIC: Using split EOI/Deactivate mode
+[    0.000000] rcu: srcu_init: Setting srcu_struct sizes based on contention.
+[    0.000000] arch_timer: Enabling global workaround for Allwinner erratum UNKNOWN1
+[    0.000000] arch_timer: CPU0: Trapping CNTVCT access
+[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns
+[    0.000001] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns
+[    0.000796] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns
+[    0.002317] Console: colour dummy device 80x25
+[    0.002855] printk: console [tty0] enabled
+[    0.002955] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=96000)
+[    0.002989] pid_max: default: 32768 minimum: 301
+[    0.003075] LSM: Security Framework initializing
+[    0.003206] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.003240] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.005210] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.005247] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.005357] cblist_init_generic: Setting adjustable number of callback queues.
+[    0.005379] cblist_init_generic: Setting shift to 2 and lim to 1.
+[    0.005613] rcu: Hierarchical SRCU implementation.
+[    0.005630] rcu:     Max phase no-delay instances is 1000.
+[    0.009411] EFI services will not be available.
+[    0.009751] smp: Bringing up secondary CPUs ...
+[    0.012267] Detected VIPT I-cache on CPU1
+[    0.012402] arch_timer: CPU1: Trapping CNTVCT access
+[    0.012422] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[    0.013905] Detected VIPT I-cache on CPU2
+[    0.013995] arch_timer: CPU2: Trapping CNTVCT access
+[    0.014008] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[    0.015245] Detected VIPT I-cache on CPU3
+[    0.015335] arch_timer: CPU3: Trapping CNTVCT access
+[    0.015346] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[    0.015428] smp: Brought up 1 node, 4 CPUs
+[    0.015544] SMP: Total of 4 processors activated.
+[    0.015561] CPU features: detected: 32-bit EL0 Support
+[    0.015576] CPU features: detected: 32-bit EL1 Support
+[    0.015592] CPU features: detected: CRC32 instructions
+[    0.015684] CPU: All CPU(s) started at EL2
+[    0.015721] alternatives: applying system-wide alternatives
+[    0.017882] devtmpfs: initialized
+[    0.026594] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.026658] futex hash table entries: 1024 (order: 4, 65536 bytes, linear)
+[    0.028092] pinctrl core: initialized pinctrl subsystem
+[    0.031173] DMI not present or invalid.
+[    0.032048] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.033378] DMA: preallocated 128 KiB GFP_KERNEL pool for atomic allocations
+[    0.033655] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.033805] DMA: preallocated 128 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.033901] audit: initializing netlink subsys (disabled)
+[    0.034099] audit: type=2000 audit(0.028:1): state=initialized audit_enabled=0 res=1
+[    0.035805] thermal_sys: Registered thermal governor 'step_wise'
+[    0.035813] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.035920] cpuidle: using governor menu
+[    0.036175] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.036314] ASID allocator initialised with 65536 entries
+[    0.038759] Serial: AMBA PL011 UART driver
+[    0.047724] platform 1c0c000.lcd-controller: Fixed dependency cycle(s) with /soc/bus@1000000/mixer@200000
+[    0.047794] platform 1c0c000.lcd-controller: Fixed dependency cycle(s) with /soc/bus@1000000/mixer@100000
+[    0.048293] platform 1c0d000.lcd-controller: Fixed dependency cycle(s) with /soc/hdmi@1ee0000
+[    0.064296] platform 1ee0000.hdmi: Fixed dependency cycle(s) with /hdmi-connector
+[    0.065535] KASLR disabled due to lack of seed
+[    0.077856] HugeTLB: registered 1.00 GiB page size, pre-allocated 0 pages
+[    0.077895] HugeTLB: 0 KiB vmemmap can be freed for a 1.00 GiB page
+[    0.077915] HugeTLB: registered 32.0 MiB page size, pre-allocated 0 pages
+[    0.077933] HugeTLB: 0 KiB vmemmap can be freed for a 32.0 MiB page
+[    0.077951] HugeTLB: registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.077967] HugeTLB: 0 KiB vmemmap can be freed for a 2.00 MiB page
+[    0.077986] HugeTLB: registered 64.0 KiB page size, pre-allocated 0 pages
+[    0.078002] HugeTLB: 0 KiB vmemmap can be freed for a 64.0 KiB page
+[    0.080045] ACPI: Interpreter disabled.
+[    0.082941] iommu: Default domain type: Translated 
+[    0.082965] iommu: DMA domain TLB invalidation policy: strict mode 
+[    0.083296] SCSI subsystem initialized
+[    0.083734] usbcore: registered new interface driver usbfs
+[    0.083796] usbcore: registered new interface driver hub
+[    0.083843] usbcore: registered new device driver usb
+[    0.085129] pps_core: LinuxPPS API ver. 1 registered
+[    0.085148] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.085183] PTP clock support registered
+[    0.085353] EDAC MC: Ver: 3.0.0
+[    0.087272] FPGA manager framework
+[    0.087389] Advanced Linux Sound Architecture Driver Initialized.
+[    0.088431] vgaarb: loaded
+[    0.088815] clocksource: Switched to clocksource arch_sys_counter
+[    0.089092] VFS: Disk quotas dquot_6.6.0
+[    0.089155] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.089397] pnp: PnP ACPI: disabled
+[    0.097944] NET: Registered PF_INET protocol family
+[    0.098182] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.099502] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    0.099588] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.099624] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.099727] TCP bind hash table entries: 8192 (order: 6, 262144 bytes, linear)
+[    0.100049] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.100197] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.100251] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.100427] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.100905] RPC: Registered named UNIX socket transport module.
+[    0.100927] RPC: Registered udp transport module.
+[    0.100942] RPC: Registered tcp transport module.
+[    0.100956] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.100980] PCI: CLS 0 bytes, default 64
+[    0.101281] Unpacking initramfs...
+[    0.105773] hw perfevents: enabled with armv8_cortex_a53 PMU driver, 7 counters available
+[    0.106490] kvm [1]: IPA Size Limit: 40 bits
+[    0.108962] kvm [1]: vgic interrupt IRQ9
+[    0.109099] kvm [1]: Hyp mode initialized successfully
+[    0.110744] Initialise system trusted keyrings
+[    0.111028] workingset: timestamp_bits=42 max_order=18 bucket_order=0
+[    0.119468] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.120301] NFS: Registering the id_resolver key type
+[    0.120357] Key type id_resolver registered
+[    0.120374] Key type id_legacy registered
+[    0.120485] nfs4filelayout_init: NFSv4 File Layout Driver Registering...
+[    0.120507] nfs4flexfilelayout_init: NFSv4 Flexfile Layout Driver Registering...
+[    0.120706] 9p: Installing v9fs 9p2000 file system support
+[    0.159620] Initramfs unpacking failed: invalid magic at start of compressed archive
+[    0.160060] Freeing initrd memory: 744K
+[    0.175181] Key type asymmetric registered
+[    0.175203] Asymmetric key parser 'x509' registered
+[    0.175323] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 245)
+[    0.175347] io scheduler mq-deadline registered
+[    0.175364] io scheduler kyber registered
+[    0.193355] EINJ: ACPI disabled.
+[    0.226864] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    0.230922] SuperH (H)SCI(F) driver initialized
+[    0.231738] msm_serial: driver initialized
+[    0.241212] loop: module loaded
+[    0.242743] megasas: 07.719.03.00-rc1
+[    0.251322] tun: Universal TUN/TAP device driver, 1.6
+[    0.252700] thunder_xcv, ver 1.0
+[    0.252764] thunder_bgx, ver 1.0
+[    0.252864] nicpf, ver 1.0
+[    0.254704] hns3: Hisilicon Ethernet Network Driver for Hip08 Family - version
+[    0.254730] hns3: Copyright (c) 2017 Huawei Corporation.
+[    0.254806] hclge is initializing
+[    0.254848] e1000: Intel(R) PRO/1000 Network Driver
+[    0.254864] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    0.254925] e1000e: Intel(R) PRO/1000 Network Driver
+[    0.254940] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[    0.255004] igb: Intel(R) Gigabit Ethernet Network Driver
+[    0.255021] igb: Copyright (c) 2007-2014 Intel Corporation.
+[    0.255077] igbvf: Intel(R) Gigabit Virtual Function Network Driver
+[    0.255095] igbvf: Copyright (c) 2009 - 2012 Intel Corporation.
+[    0.255577] sky2: driver version 1.30
+[    0.257558] VFIO - User Level meta-driver version: 0.3
+[    0.262311] usbcore: registered new interface driver usb-storage
+[    0.267088] sun6i-rtc 1f00000.rtc: registered as rtc0
+[    0.267149] sun6i-rtc 1f00000.rtc: setting system clock to 1970-01-01T00:00:13 UTC (13)
+[    0.267286] sun6i-rtc 1f00000.rtc: RTC enabled
+[    0.267770] i2c_dev: i2c /dev entries driver
+[    0.278224] sdhci: Secure Digital Host Controller Interface driver
+[    0.278262] sdhci: Copyright(c) Pierre Ossman
+[    0.279402] Synopsys Designware Multimedia Card Interface Driver
+[    0.281042] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.284009] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.286176] SMCCC: SOC_ID: ID = jep106:091e:1689 Revision = 0x00000001
+[    0.287474] usbcore: registered new interface driver usbhid
+[    0.287499] usbhid: USB HID core driver
+[    0.299921] NET: Registered PF_PACKET protocol family
+[    0.300135] 9pnet: Installing 9P2000 support
+[    0.300226] Key type dns_resolver registered
+[    0.300697] registered taskstats version 1
+[    0.300738] Loading compiled-in X.509 certificates
+[    0.334602] sun50i-a64-pinctrl 1c20800.pinctrl: initialized sunXi PIO driver
+[    0.337280] sun50i-a64-r-pinctrl 1f02c00.pinctrl: initialized sunXi PIO driver
+[    0.339101] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pb not found, using dummy regulator
+[    0.360068] 1c28000.serial: ttyS0 at MMIO 0x1c28000 (irq = 153, base_baud = 1500000) is a U6_16550A
+[    1.560927] printk: console [ttyS0] enabled
+[    1.567400] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pg not found, using dummy regulator
+[    1.598693] 1c28400.serial: ttyS1 at MMIO 0x1c28400 (irq = 154, base_baud = 1500000) is a U6_16550A
+[    1.607922] serial serial0: tty port ttyS1 registered
+[    1.615244] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.632769] ehci-platform 1c1a000.usb: EHCI Host Controller
+[    1.635961] ehci-platform 1c1b000.usb: EHCI Host Controller
+[    1.638437] ehci-platform 1c1a000.usb: new USB bus registered, assigned bus number 1
+[    1.641365] usb_phy_generic usb_phy_generic.1.auto: supply vcc not found, using dummy regulator
+[    1.641516] usb_phy_generic usb_phy_generic.1.auto: dummy supplies not allowed for exclusive requests
+[    1.642552] musb-hdrc musb-hdrc.2.auto: MUSB HDRC host driver
+[    1.642574] musb-hdrc musb-hdrc.2.auto: new USB bus registered, assigned bus number 2
+[    1.643437] hub 2-0:1.0: USB hub found
+[    1.643479] hub 2-0:1.0: 1 port detected
+[    1.644043] ehci-platform 1c1b000.usb: new USB bus registered, assigned bus number 3
+[    1.646106] ohci-platform 1c1a400.usb: Generic Platform OHCI controller
+[    1.646135] ohci-platform 1c1a400.usb: new USB bus registered, assigned bus number 4
+[    1.646280] ohci-platform 1c1a400.usb: irq 159, io mem 0x01c1a400
+[    1.647120] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-ph not found, using dummy regulator
+[    1.649433] ohci-platform 1c1b400.usb: Generic Platform OHCI controller
+[    1.649463] ohci-platform 1c1b400.usb: new USB bus registered, assigned bus number 5
+[    1.649606] ohci-platform 1c1b400.usb: irq 161, io mem 0x01c1b400
+[    1.651881] ehci-platform 1c1a000.usb: irq 156, io mem 0x01c1a000
+[    1.655492] sun50i-a64-r-pinctrl 1f02c00.pinctrl: supply vcc-pl not found, using dummy regulator
+[    1.660634] ehci-platform 1c1b000.usb: irq 157, io mem 0x01c1b000
+[    1.665464] sunxi-rsb 1f03400.rsb: RSB running at 4000000 Hz
+[    1.665842] axp20x-rsb sunxi-rsb-3a3: AXP20x variant AXP803 found
+[    1.666757] axp20x-rsb sunxi-rsb-3a3: mask_invert=true is deprecated; please switch to unmask_base
+[    1.684844] ehci-platform 1c1a000.usb: USB 2.0 started, EHCI 1.00
+[    1.688136] axp20x-rsb sunxi-rsb-3a3: AXP20X driver loaded
+[    1.691778] hub 1-0:1.0: USB hub found
+[    1.700849] ehci-platform 1c1b000.usb: USB 2.0 started, EHCI 1.00
+[    1.701299] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.704893] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pd not found, using dummy regulator
+[    1.705218] dwmac-sun8i 1c30000.ethernet: IRQ eth_wake_irq not found
+[    1.705227] dwmac-sun8i 1c30000.ethernet: IRQ eth_lpi not found
+[    1.705461] hub 1-0:1.0: 1 port detected
+[    1.705506] dwmac-sun8i 1c30000.ethernet: PTP uses main clock
+[    1.705533] dwmac-sun8i 1c30000.ethernet: Current syscon value is not the default 6 (expect 0)
+[    1.705895] dwmac-sun8i 1c30000.ethernet: No HW DMA feature register supported
+[    1.705904] dwmac-sun8i 1c30000.ethernet: RX Checksum Offload Engine supported
+[    1.705910] dwmac-sun8i 1c30000.ethernet: COE Type 2
+[    1.705918] dwmac-sun8i 1c30000.ethernet: TX Checksum insertion supported
+[    1.705925] dwmac-sun8i 1c30000.ethernet: Normal descriptors
+[    1.705932] dwmac-sun8i 1c30000.ethernet: Chain mode enabled
+[    1.726205] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pf not found, using dummy regulator
+[    1.732118] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.733412] sunxi-mmc 1c10000.mmc: allocated mmc-pwrseq
+[    1.734979] hub 4-0:1.0: USB hub found
+[    1.735515] sunxi-mmc 1c0f000.mmc: Got CD GPIO
+[    1.745053] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.748516] hub 4-0:1.0: 1 port detected
+[    1.759988] sunxi-mmc 1c10000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+[    1.760784] sunxi-mmc 1c0f000.mmc: initialized, max. request size: 16384 KB, uses new timings mode
+[    1.762567] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.764436] hub 5-0:1.0: USB hub found
+[    1.765281] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.771304] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.775195] hub 5-0:1.0: 1 port detected
+[    1.797373] mmc0: new high speed SDHC card at address 0001
+[    1.802763] hub 3-0:1.0: USB hub found
+[    1.803685] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    1.806286] mmcblk0: mmc0:0001 SD32G 29.1 GiB 
+[    1.811740] hub 3-0:1.0: 1 port detected
+[    1.822201]  mmcblk0: p1 p2
+[    1.830801] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    2.034269] dwmac-sun8i 1c30000.ethernet eth0: Register MEM_TYPE_PAGE_POOL RxQ-0
+[    2.036253] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[    2.045990] dwmac-sun8i 1c30000.ethernet eth0: PHY [stmmac-0:01] driver [RTL8211E Gigabit Ethernet] (irq=POLL)
+[    2.060388] dwmac-sun8i 1c30000.ethernet eth0: No Safety Features support found
+[    2.067713] dwmac-sun8i 1c30000.ethernet eth0: No MAC Management Counters available
+[    2.075388] dwmac-sun8i 1c30000.ethernet eth0: PTP not supported by HW
+[    2.084604] dwmac-sun8i 1c30000.ethernet eth0: configuring for phy/rgmii-txid link mode
+[    6.177707] dwmac-sun8i 1c30000.ethernet eth0: Link is Up - 1Gbps/Full - flow control rx/tx
+[    6.204837] Sending DHCP requests ., OK
+[    6.224730] IP-Config: Got DHCP answer from 192.168.10.1, my address is 192.168.10.121
+[    6.232702] IP-Config: Complete:
+[    6.235957]      device=eth0, hwaddr=02:ba:cd:42:77:0b, ipaddr=192.168.10.121, mask=255.255.255.0, gw=192.168.10.1
+[    6.246341]      host=192.168.10.121, domain=, nis-domain=(none)
+[    6.252373]      bootserver=0.0.0.0, rootserver=0.0.0.0, rootpath=
+[    6.252384]      nameserver0=192.168.10.1
+[    6.263019] ALSA device list:
+[    6.266034]   No soundcards found.
+[    6.277163] Freeing unused kernel memory: 7616K
+[    6.281884] Run /sbin/init as init process
+Mount everything 
+/etc/init.d/rcS: line 20: can't create /proc/sys/kernel/hotplug: nonexistent directory
+Finished
+/bin/sh: can't access tty; job control turned off
+~ # [   16.355317] sun50i-a64-pinctrl 1c20800.pinctrl: supply vcc-pc not found, using dummy regulator
+[   16.365503] platform 1c68000.spi: deferred probe pending
+
+~ #
+~ # poweroff -f
+[   63.284138] kvm: exiting hardware virtualization
+[   63.307259] reboot: Power down
+
