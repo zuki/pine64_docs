@@ -1159,5 +1159,11 @@ rcS: applet not found
 | +BINFMT_SCRIPT | 620 | 5,269,512 | OK | #!/bin/shを実行可能に |
 | +ARM_SCPI, MAILBOX | 627 | 5,337,096 | OK | poweroffで電源オフ |
 | LEGACY_PTY_COUNT=16 | 627 | 5,337,096 | OK | ptyを16個に |
+| *UEVENT_HELPER | 628 | 5,337,096 | OK | can't create /proc/sys/kernel/hotplug 対応 |
+
+### `/bin/sh: can't access tty; job control turned off`と表示される件
+
+- [initramfsシェル環境でジョブ制御する方法](https://www.gcd.org/blog/2008/10/163/)で詳しく説明されている。
+- テスト用途では気にする必要はない
 
 [稼働ログ](logs/tinydef.log)
