@@ -15,6 +15,7 @@
 
 # U-Boot
 
+- [TPL/SPLからのブート](uboot/booting.md)
 - [環境変数](uboot/env.md)
 - [FIT](uboot/fit/README.md)
   - [FITフォーマット](uboot/fit/format.md)
