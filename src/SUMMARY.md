@@ -33,6 +33,12 @@
 
 - [mdev](busybox/mdev.md)
 
+# Allwiner A64ユーザマニュアル
+
+- [3.3 CCU](usermanual/ccu.md)
+- [3.12 GIC](usermanual/gic.md)
+- [3.13 メッセージボックス](usermanual/message_box.md)
+- [4.3 SD-MMCホストコントローラ](usermanual/sd-mmc_host_controller.md)
 
 # Pineを楽しむ: Genodians
 
