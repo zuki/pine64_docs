@@ -36,6 +36,9 @@
 # Allwiner A64ユーザマニュアル
 
 - [3.3 CCU](usermanual/ccu.md)
+- [3.6 Timer](usermanual/timer.md)
+- [3.8 RTC](usermanual/rtc.md)
+- [3.11 DMA](usermanual/dma.md)
 - [3.12 GIC](usermanual/gic.md)
 - [3.13 メッセージボックス](usermanual/message_box.md)
 - [4.3 SD-MMCホストコントローラ](usermanual/sd-mmc_host_controller.md)
