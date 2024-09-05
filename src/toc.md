@@ -19,6 +19,9 @@
 - [環境変数](uboot/env.md)
 - [FIT](uboot/fit/README.md)
   - [FITフォーマット](uboot/fit/format.md)
+- [シェルコマンド](uboot/commands/README.md)
+  - [bootd](uboot/commands/bootd.md)
+  - [bootm](uboot/commands/bootm.md)
 - [Allwinner SoCベースのボード](uboot/allwinner.md)
 - [U-Boot: README.sunxi64](uboot/README.sunxi64_uboot.md)
 
