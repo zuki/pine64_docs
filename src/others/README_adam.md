@@ -9,7 +9,7 @@
 - [http://linux-sunxi.org/A64](http://linux-sunxi.org/A64)
 - [http://linux-sunxi.org/Pine64](http://linux-sunxi.org/Pine64)
 
-このボードはAllwinner A64を搭載しています。AllwinnerはBroadcomと同じく
+A64ボードはAllwinner A64を搭載しています。AllwinnerはBroadcomと同じく
 通常はドキュメントを保護しています。しかし、最近のC.H.I.Pや今回の製品
 （やその他の製品）についてはドキュメントを見つけるのは難しくありません。
 Allwinnerもドキュメントを削除するつもりはないようです。
@@ -20,7 +20,7 @@ Allwinnerもドキュメントを削除するつもりはないようです。
 このボードにはFELジャンパがあり、基本的にUSBを使ってチップにアクセスし、
 再ロードすることができます。
 
-このボードは今のところraspberry piと同じようにSDカードベースのようです。
+A64ボードは今のところraspberry piと同じようにSDカードベースのようです。
 ただし、raspiとは異なり、何か他のプロセッサではなくARMがシステムを起動します。
 
 私の他の作品を見てもらえればわかると思いますが、当然ながら、私はLinuxを
@@ -55,7 +55,7 @@ xzcat simpleimage-pine64-20160207-1.xz | pv |sudo dd of=/dev/sdX bs=1M oflag=syn
 > 25/34ピン (GND)でアクセスできます（これは公式のコネクタの説明には
 > 記載されていません）。
 
-これは今のところ事実のようです。ある種のftdiブレークアウト (3.3V) か
+これは今のところ事実のようです。何らかのftdiブレークアウト (3.3V) か
 ftdiケーブル（raspberry piやC.H.I.Pに使うものと同じ）を使えば、SDカードを
 挿入した状態でブートするのを見ることができます。
 
@@ -97,7 +97,7 @@ ftdiケーブル（raspberry piやC.H.I.Pに使うものと同じ）を使えば
 Hit any key to stop autoboot:  0
 sunxi# mw.b 0x01c28000 0x55
 Usunxi# mw.b 0x01c28000 0x56
-Vsunxi#                         # U (0x55), V (0x56)が憑依されていることに注目
+Vsunxi#                         # U (0x55), V (0x56)が表示されていることに注目
 ```
 
 まだすることがあるようです。
@@ -113,7 +113,7 @@ load_addr=41000000
 
 LEDを取り付けてないのでLチカは最初の例になりません。uart01が最初の例です。
 
-これはバイナリのダンプを端末からubootにカット&ペーストできるような
+以下はバイナリのダンプを端末からubootにカット&ペーストできるような
 形で追加出力しています。
 
 ```bash

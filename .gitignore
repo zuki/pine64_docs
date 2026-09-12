@@ -1,3 +1,7 @@
 book/
 src/memo/armbian/
 src/uboot/pine64_plus_defconfig
+specs/
+src/genodians/16550.pdf
+src/others/a64-pine64-plus.dts
+src/wiki/docs/

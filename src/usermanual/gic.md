@@ -34,7 +34,7 @@ GICの詳細については*GIC PL400テクニカルリファレンスマニュ�
 
 ## Devicetree for ARM GIC v2/v3
 
-LINUX/Documentation/devicetree/interrupt-controller/arm,gic.yaml
+[interrupt-controller属性の説明](https://github.com/torvalds/linux/blob/df2908090cda368b01ff43709f51890076c56157/Documentation/devicetree/bindings/interrupt-controller/arm%2Cgic.yaml)
 
 ### デバイスツリーのinterrupt属性 = &lt;A B C&gt;
 

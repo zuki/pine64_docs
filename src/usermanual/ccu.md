@@ -43,28 +43,28 @@ CCUには次の機能があります。
 
 | レジスタ名 | オフセット | 説明 |
 |:-----------|:-----------|:-----|
-| PLL_CPUX_CTRL_REG | 0x0000 | PLL_CPUX Control Register |
-| PLL_AUDIO_CTRL_REG | 0x0008 | PLL_AUDIO Control Register |
-| PLL_VIDEO0_CTRL_REG | 0x0010 | PLL_VIDEO0 Control Register |
-| PLL_VE_CTRL_REG | 0x0018 | PLL_VE Control Register |
-| PLL_DDR0_CTRL_REG | 0x0020 | PLL_DDR0 Control Register |
-| PLL_PERIPH0_CTRL_REG | 0x0028 | PLL_PERIPH0 Control Register |
+| PLL_CPUX_CTRL_REG | 0x0000 | PLL_CPUX Control Register (PLL1) |
+| PLL_AUDIO_CTRL_REG | 0x0008 | PLL_AUDIO Control Register (PLL2) |
+| PLL_VIDEO0_CTRL_REG | 0x0010 | PLL_VIDEO0 Control Register (PLL3) |
+| PLL_VE_CTRL_REG | 0x0018 | PLL_VE Control Register (PLL4) |
+| PLL_DDR0_CTRL_REG | 0x0020 | PLL_DDR0 Control Register (PLL5) |
+| PLL_PERIPH0_CTRL_REG | 0x0028 | PLL_PERIPH0 Control Register (PLL6) |
 | PLL_PERIPH1_CTRL_REG | 0x002C | PLL_PERIPH1 Control Register |
-| PLL_VIDEO1_CTRL_REG | 0x0030 | PLL_VIDEO1 Control Register |
-| PLL_GPU_CTRL_REG | 0x0038 | PLL_GPU Control Register |
+| PLL_VIDEO1_CTRL_REG | 0x0030 | PLL_VIDEO1 Control Register (PLL7) |
+| PLL_GPU_CTRL_REG | 0x0038 | PLL_GPU Control Register (PLL8) |
 | PLL_MIPI_CTRL_REG | 0x0040 | PLL_MIPI Control Register |
-| PLL_HSIC_CTRL_REG | 0x0044 | PLL_HSIC Control Register |
-| PLL_DE_CTRL_REG | 0x0048 | PLL_DE Control Register |
-| PLL_DDR1_CTRL_REG | 0x004C | PLL_DDR1 Control Register |
+| PLL_HSIC_CTRL_REG | 0x0044 | PLL_HSIC Control Register (PLL9) |
+| PLL_DE_CTRL_REG | 0x0048 | PLL_DE Control Register (PLL10) |
+| PLL_DDR1_CTRL_REG | 0x004C | PLL_DDR1 Control Register (PLL11) |
 | CPU_AXI_CFG_REG | 0x0050 | CPUX/AXI Configuration Register |
 | AHB1_APB1_CFG_REG | 0x0054 | AHB1/APB1 Configuration Register |
-| APB2 _CFG_REG | 0x0058 | APB2 Configuration Register |
-| AHB2_CFG_REG | 0x005C | AHB2 Configuration Register |
-| BUS_CLK_GATING_REG0 | 0x0060 | Bus Clock Gating Register 0 |
-| BUS_CLK_GATING_REG1 | 0x0064 | Bus Clock Gating Register 1 |
-| BUS_CLK_GATING_REG2 | 0x0068 | Bus Clock Gating Register 2 |
-| BUS_CLK_GATING_REG3 | 0x006C | Bus Clock Gating Register 3 |
-| BUS_CLK_GATING_REG4 | 0x0070 | Bus Clock Gating Register 4 |
+| APB2_CFG_REG | 0x0058 | APB2 Configuration Register |
+| AHB2_CFG_REG | 0x005C | AHB2 Configuration Register (AXI_GATE) |
+| BUS_CLK_GATING_REG0 | 0x0060 | Bus Clock Gating Register 0 (AHB_GATE0) |
+| BUS_CLK_GATING_REG1 | 0x0064 | Bus Clock Gating Register 1 (AHB_GATE1) |
+| BUS_CLK_GATING_REG2 | 0x0068 | Bus Clock Gating Register 2 (APB1_GATE) |
+| BUS_CLK_GATING_REG3 | 0x006C | Bus Clock Gating Register 3 (APB2_GATE) |
+| BUS_CLK_GATING_REG4 | 0x0070 | Bus Clock Gating Register 4 (BUS_GATE4) |
 | THS_CLK_REG | 0x0074 | THS Clock Register |
 | NAND_CLK_REG | 0x0080 | NAND Clock Register |
 | SDMMC0_CLK_REG | 0x0088 | SDMMC0 Clock Register |

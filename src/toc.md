@@ -36,16 +36,25 @@
 
 # Allwiner A64ユーザマニュアル
 
+- [3.1 メモリマッピング](usermanual/memory_mapping.md)
 - [3.3 CCU](usermanual/ccu.md)
-- [3.6 Timer](usermanual/timer.md)
+- [3.6 タイマー](usermanual/timer.md)
 - [3.8 RTC](usermanual/rtc.md)
+- [3.9 ハイスピードタイマー](usermanual/hs_timer.md)
 - [3.11 DMA](usermanual/dma.md)
 - [3.12 GIC](usermanual/gic.md)
 - [3.13 メッセージボックス](usermanual/message_box.md)
+- [3.21 ポートコントローラ (CPUx-PORT)](usermanual/port_b-h.md)
+- [3.22 ポートコントローラ (CPUs-PORT)](usermanual/port_l.md)
 - [4.3 SD-MMCホストコントローラ](usermanual/sd-mmc_host_controller.md)
 - [7.3 UART](usermanual/uart.md)
 - [7.5 USB](usermanual/usb.md)
 - [7.9 EMAC](usermanual/emac.md)
+
+# GIC　: Generic Interrupt Controller 関係マニュアル
+
+- [GICv2アーキテクチャマニュアル](gic/gicv2_manual.md)
+- [GIC400テクニカルマニュアル](gic/gic400_tech_manual.md)
 
 # Pineを楽しむ: Genodians
 
@@ -60,6 +69,7 @@
 - [apritzel/pine64: README](others/README_apritzel.md)
 - [apritzel/pine64: Booting](others/Booting_apritzel.md)
 - [Pine A64はDockerを実行する最も安価なARM64ビットプラットフォームになろうとしている](others/docker_pirates_20160125.md)
+- [Pine64+のデバイスツリー](others/devicetree.md)
 
 # 作業記録
 
@@ -70,3 +80,8 @@
 - [tftp経由のプログラムロード](memo/tftp.md)
 - [U-BootからLinuxを実行](memo/uboot_linux.md)
 - [MacのSDXCカードスロットをVirtualBoxから使用する](memo/virtualbox.md)
+
+# pine64+でxv6を動かす
+
+- [macでu-bootをSDカードに書き込む](xv6/dd_uboot.md)
+- [u-bootからプログラムを起動する](xv6/u-boot.md)

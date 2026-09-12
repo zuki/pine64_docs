@@ -60,7 +60,7 @@ repos/base-hw/src/core/board/imx8q_evk/board.h
 
 *lib/mk/* 配下にあるファイルはライブラリのビルド記述ファイルです。このような
 ファイルは2つあり、ファイル拡張子は.mkです。これらのファイルは*spec/arm_v8/*と
-いうサブディレクトリにあり、ARMv8に一致する命令セットアーキテクチャ用にビルド
+いうサブディレクトリにあり、ARMv8に一致する命令セットアーキテクチャ用にビルドの
 際にだけ[ビルドシステム](https://genode.org/documentation/genode-foundations/20.05/development/Build_system.html)が考慮するようになっています。
 
 ### bootstrapとcoreの違い
@@ -88,7 +88,7 @@ repos/base-hw/src/core/board/imx8q_evk/board.h
 
 coreはMMUを有効にして実行されます。仮想アドレス空間の上位部分にグローバルに
 マッピングされます。カーネルとして動作するために次の機能のための基本的なドライバを含んでいます: 割り込みコントローラ、（プリエンプティブなスケジューリングの
-ための）カーネルタイマー、キャッシュンテナンス、CPU間の同期です。core上で動作
+ための）カーネルタイマー、キャッシュテナンス、CPU間の同期です。core上で動作
 するユーザレベルのコンポーネントとの相互作用のために、カーネルからユーザ
 ランドに出るためのコードパスと、逆にユーザランドからカーネルに入るためのコード
 パス（システムコール、例外、割り込み）を備えています。機能面では、コンポーネント
@@ -191,7 +191,7 @@ i.MX8 SoCは割り込みコントローラとしてGICv3を使用しています
 ドライバgicv3.ccが含まれています。一方、Linuxのブートログから知ったように
 Allwinner A64 SoCはGICv2割り込みコントローラを使用しています。
 
-MMUドライバはARMのバージョンによりで異なります。i.MX8はA53 CPUコアをベースと
+MMUドライバはARMのバージョンで異なります。i.MX8はA53 CPUコアをベースと
 しています。Allwinner A64も同じものを使用しています。
 
 アセンブリファイル *arm_64/crt0.s* には、ブートローダからジャンプする
@@ -254,7 +254,7 @@ void Board::Cpu::wake_up_all_cpus(void * ip)
 }
 ```
 
-`early_ram_regions`、`late_ram_regions`、`core_mmio`のデータ構造体は基地の
+`early_ram_regions`、`late_ram_regions`、`core_mmio`のデータ構造体は既知の
 物理メモリ範囲とメモリマップドI/Oレジスタ範囲で初期化されます。この情報はさらに
 コアに渡されるように指定されています。
 
@@ -271,7 +271,7 @@ void Board::Cpu::wake_up_all_cpus(void * ip)
 調査が必要であることを覚悟する必要があります。ただし、最初のうちは、ブートCPU
 しか使わないので、今のところこの関数を無視することができます。
 
-最後に、コア固有のファイルに目を向けよう。
+最後に、コア固有のファイルに目を向けてみましょう。
 
 *repos/imx/lib/mk/spec/arm_v8/core-hw-imx8q_evk.mk*
 
@@ -336,3 +336,227 @@ namespace Board {
 
 VCPU_MAXの定義は仮想マシンで仮想CPUの状態を保持する配列のサイズを決める
 ために使用されるだけです。今のところ重要ではありません。
+
+## ボードサポート用の新しいhome
+
+新しいボードのサポートを追加する最も簡単な方法は上記に紹介したファイルのミラーリングです。
+Genodeリポジトリの新しいブランチに新たなファイルやディレクトリを追加することで進めることが
+できます。もう一つの方法は、Genodeビルドシステムはボード固有のカスタムファイルを専用の
+ソースリポジトで管理することができるのでGenodeのメインリポジトリとは独立に管理できます。
+後者のアプローチには以下の利点があります。
+
+まず、ボード固有のコードと汎用的なGenodeコードとの明確な分離が強化されます。特に、
+*コードの分離*により、特定のボードに関連するファイルの作業セットが絞り込まれ、重要なコードだけが
+視野に入るようになります。
+
+運用面では、責任、品質保証、ライセンス管理、開発プロセス、ソースコードのホスティング先の
+選択といった観点でコードの所有権を分離することが可能になります。
+
+最後に、1つの巨大な共同コードベースに合意しなければならないというプレッシャーを軽減し、
+開発者間の潜在的な摩擦要因を取り除きます。
+
+以下では、コードを*allwinner*という名前の新しいリポジトリに配置します。
+
+```bash
+mkdir repos/allwinner
+```
+
+原則として、ディレクトリは任意の場所に配置できますが、Genodeのソースツリー内の*repos*
+ディレクトリ配下に配置するのが実用的だと思います。また、シンボリックリンクの使用もも選択
+することもできます。たとえば、`repos/allwinner` が `~/src/genode-allwinner.git` を
+指すように設定するなどです。
+
+ボードサポートには簡潔な名前を考える必要があります。私たちはGenode全体を通じてある**命名規則**に
+従っています。具体的には、密接に関連する単語にはアンダースコア '_' を、関連性の低い用語には
+ハイフン '-' を使用します。たとえば、ファイル名 *core-hw-imx8q_evk.mk* において、
+"imx8q_evk" は密接に関連しているのに対し、"core" と "hw" は一種のカテゴリとして使用されて
+います（"imx8q_evk"ボード向けの"hw"カーネルの"core"コンポーネントという意味になりあす）。
+これらの規約を踏まえると、ボード名 "pine_a64lts" が妥当であると考えられます。十分に具体的で
+ありながら、簡潔さも保たれています。
+
+新しい *allwinner* リポジトリの初期コンテンツについては、base-hw リポジトリのファイルを
+そのままミラーリングすることとします。
+
+![allwinner repos](figs/mirror_imx8_pine.png)
+
+```bash
+$ mkdir -p allwinner/src/include/hw/spec/arm_64/
+$ cp imx/src/include/hw/spec/arm_64/imx8q_evk_board.h \
+    allwinner/src/include/hw/spec/arm_64/pine_a64lts_board.h
+$ mkdir -p allwinner/lib/mk/spec/arm_v8
+$ cp imx/lib/mk/spec/arm_v8/bootstrap-hw-imx8q_evk.mk \
+    allwinner/lib/mk/spec/arm_v8/bootstrap-hw-pine_a64lts.mk
+$ mkdir -p allwinner/src/bootstrap/board/pine_a64lts
+$ cp imx/src/bootstrap/board/imx8q_evk/board.h \
+    allwinner/src/bootstrap/board/pine_a64lts/
+$ cp imx/src/bootstrap/board/imx8q_evk/platform.cc \
+    allwinner/src/bootstrap/board/pine_a64lts/
+$ cp imx/lib/mk/spec/arm_v8/core-hw-imx8q_evk.mk \
+    allwinner/lib/mk/spec/arm_v8/core-hw-pine_a64lts.mk
+$ mkdir -p allwinner/src/core/board/pine_a64lts
+$ cp imx/src/core/board/imx8q_evk/board.h \
+    allwinner/src/core/board/pine_a64lts/
+```
+
+この地点ではビルドプロセスを正しく確立することに注力します。一度に一つのことに集中するため、
+ここではPine-A64-LTSボードがi.MX8 EVKと同様に動作するものとします。実際にボード上で
+コードを実行するまでは、既存のボードからコピーした技術的な詳細が新しいボードと一致しなくても
+気にしません。とはいえ、ビルド記述ファイル（拡張子が`mk`のファイル）はビルドプロセスを
+制御するため、作成したディレクトリ構造と整合性が取れている必要があります。したがって、これらの
+ファイルに `imx8q_evk` というパターンがないか確認する必要があります。
+
+*lib/mk/spec/arm_v8/bootstrap-hw-pine_a64lts.mk* を見ると次の行が見つかります。
+
+```bash
+REP_INC_DIR += src/bootstrap/board/imx8q_evk
+```
+
+これは次のように置き換える必要があります。
+
+```bash
+REP_INC_DIR += src/core/board/pine_a64lts
+```
+
+##　システム統合のdry-run
+
+Genodeのビルドシステムがこの新しいボードサポートをどのように受け入れるか、あるいは処理に
+詰まってしまうか、を見てみましょう。まず、ARMv8アーキテクチャ用のビルドディレクトリが必要です。
+
+```bash
+$ ./tool/create_builddir arm_v8a
+ Successfully created build directory at /.../genode/build/arm_v8a.
+ Please adjust /.../genode/build/arm_v8a/etc/build.conf according to your needs.
+```
+
+示されているように、お好みのテキストエディタで *build/etc/build.conf* を開きます。通常、
+私はファイルの先頭にある対応する行のコメントを外して、並列ビルドを有効にします。しかし、当面、
+スケルトンのビルドが正常に完了するまでは、並列ビルドを無効のままにしておきます。ビルドシステムが
+決定論的に動作する方がそれを追うのが容易だからです。
+
+`REPOSITORIES`変数にカスタムリポジトリへのパスを追加する必要があります。*allwinner*
+リポジトリの場合、次のようになるでしょう。
+
+```bash
+REPOSITORIES += $(GENODE_DIR)/repos/allwinner
+```
+
+REPOSITORIESの順序がビルドシステムによるファイルの検索順序を決めることに注意してください。
+*allwinner* リポジトリが他のリポジトリ（特に base-hw）の内容を上書きできるようにするには
+上の行を他の行よりも前に配置する必要があります。
+
+これらの変更を反映させれば、新しいボード用のブートストラップのビルドを実行できます。
+
+```bash
+$ cd build/arm_v8a
+$ make bootstrap/hw KERNEL=hw BOARD=pine_a64lts
+  ...
+  Library bootstrap-hw-pine_a64lts
+    ...
+    MERGE    bootstrap-hw-pine_a64lts.lib.a
+  Program bootstrap/hw/bootstrap_hw_pine_a64lts
+```
+
+結果は *bootstrap/hw/* サブディレクトリ内にあります。そこには、*bootstrap-hw-pine_a64lts.o*
+という名前のオブジェクトファイルが1つと、そのファイルのストリップ済みバージョンが見つかります。
+
+同様に、base-hw カーネルおよび新しいボード用のコアは、次のようにビルドできます。
+
+```bash
+$ make core KERNEL=hw BOARD=pine_a64lts
+    ...
+    MERGE    core-hw-pine_a64lts.lib.a
+  Program core/hw/core_hw_pine_a64lts
+```
+
+Bootstrapのビルドと同様に、結果は対応するサブディレクトリ（ここでは *core/hw/*）にあります。
+*core-hw-pine_a64lts.a* という名前のアーカイブファイルが1つとそのファイルのストリップ版が
+見つかります。
+
+次に、コアとブートストラップの両方を含む**システムイメージ**をビルドします。ここで、並列ビルドを
+有効にしておくのが良いでしょう。*etc/build.conf* ファイルを編集し、以下の行のコメントを
+解除（ハッシュ記号 # を削除）してください。
+
+```bash
+#MAKE += -j4
+```
+
+また、コメントアウトされた例に示されているように、BOARD引数とKERNEL引数を *build.conf*
+ファイルに直接記述することも可能です。これにより、ビルドコマンドを実行するたびに引数を指定する
+手間が省けます。
+
+システムイメージにはブートストラップとコアの他にブートモジュールが含まれます。最初の2つの
+要素はすでに整っています。では、ブートモジュールはどうでしょうか。各システムシナリオで常に
+同じであるブートストラップとコアとは対照的に、ブートモジュールはシステムシナリオごとに異なります。
+Genodeのシステムシナリオは実行スクリプトの形式で定義されます。*repos/base/run/log.run*に
+ある実行スクリプトが良い出発点となります。この特定の実行スクリプトで定義されているように、
+システムシナリオ"log"のシステムイメージは、configurationに加えて、core、init、ld.lib.so、
+init、test-logで構成されています。このシナリオのシステムイメージ（image.elf）は、次の
+ようになります。
+
+![system image](figs/base_hw_system_image.png)
+
+Genodeのrunツールはさまざまなパーツからこのようなマトリョーシカを組み立てるプロセスを
+自動化します。さっそく試してみましょう。
+
+```bash
+$ make run/log KERNEL=hw BOARD=pine_a64lts
+...
+... long sequence of compile steps
+...
+genode build completed
+using 'ld-hw.lib.so' as 'ld.lib.so'
+core link address is 0xffffffc000000000
+
+Error: unknown image link address
+
+ File board/pine_a64lts/image_link_address not present in any repository.
+
+Makefile:329: recipe for target 'run/log' failed
+```
+
+このメッセージをきっかけに、run ツールを改めて詳しく見てみるべきでしょう。
+
+```bash
+$ cd genode
+$ grep -r "unknown image link address" tool
+tool/run/boot_dir/hw: puts stderr "\nError: unknown image link address\n"
+```
+
+ファイル *tool/run/boot_dir/hw* はrun ツールの一部であり、base-hw カーネル用の
+システムイメージをその構成要素から統合する処理を定義しています。システムイメージが構成要素から
+どのように組み立てられるかを大まかに理解するために、このファイルにざっと目を通しておく価値が
+あります。上記のエラーメッセージは、システムイメージの統合ステップ中に呼び出される関数
+`bootstrap_link_address` で発生しています。
+
+リンクアドレスはシステムイメージを ELF バイナリとして読み込む際にブートローダーによって
+評価されます。これは、物理メモリ内におけるシステムイメージのテキストセグメントの開始位置を
+定義するものです。SoC やボードによって物理メモリのレイアウトが異なるため、Pine-A64-LTS
+ボードのメモリレイアウトに適した値を指定する必要があります。Linuxの */proc/iomem* を
+確認すると、このボードのシステムRAMは`0x40000000`から始まることが分かります。
+
+上記のエラーメッセージが示すように、runツールは *board/pine_a64lts/image_link_address* と
+いうファイルにリンクアドレスが存在することを想定しています。このファイルを作成して適切な値を
+設定しましょう。メモリの先頭には、ブートローダーが占有することが多いため、ある程度の空き領域を
+確保しておくのが一般的な慣習です。通常、システムイメージは物理メモリの先頭から 64 KiB 後に
+リンクすれば問題ありません。
+
+```bash
+$ cd allwinner
+$ mkdir -p board/pine_a64lts
+$ echo 0x40010000 > board/pine_a64lts/image_link_address
+```
+
+リンク先アドレスを指定すると、ログシナリオ用のシステムイメージの再ビルドは成功します。
+結果は、ビルドディレクトリの *var/run/* サブディレクトリに保存されています。
+
+```bash
+$ find var/run
+var/run
+var/run/log.boot_modules.o
+var/run/log
+var/run/log/boot
+var/run/log/boot/image.elf
+var/run/log.core
+var/run/log.bootstrap
+var/run/log.config
+```

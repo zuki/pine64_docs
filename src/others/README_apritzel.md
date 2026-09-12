@@ -2,7 +2,7 @@
 
 [オリジナル](https://github.com/apritzel/pine64/blob/master/README.md)
 
-## 画像ファイルの使用方法
+## imageファイルの使用方法
 
 ### クイックスタート
 
